@@ -3,9 +3,9 @@
     "image": "clang",
     "path": ".",
     "ports": [
-      8000
+      80
     ],
-    "start": "./application/webserver",
+    "start": "./webserver",
     "build": "make -C /application"
   }
 }

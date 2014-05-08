@@ -20,7 +20,7 @@
   "Content-Type: text/plain\r\n" \
   "Content-Length: 12\r\n" \
   "\r\n" \
-  "Hello Bowery!\n"
+  "Hello World!\n"
 
 static uv_loop_t* uv_loop;
 static uv_tcp_t server;
@@ -132,13 +132,13 @@ int main() {
   r = uv_tcp_init(uv_loop, &server);
   CHECK(r, "bind");
 
-  struct sockaddr_in address = uv_ip4_addr("0.0.0.0", 8000);
+  struct sockaddr_in address = uv_ip4_addr("0.0.0.0", 80);
 
   r = uv_tcp_bind(&server, address);
   CHECK(r, "bind");
   uv_listen((uv_stream_t*)&server, 128, on_connect);
 
-  LOG("listening on port 8000");
+  LOG("listening on port 80");
 
   uv_run(uv_loop);
 }

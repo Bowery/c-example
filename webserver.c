@@ -20,7 +20,7 @@
   "Content-Type: text/plain\r\n" \
   "Content-Length: 12\r\n" \
   "\r\n" \
-  "hello world\n"
+  "Hello Bowery!\n"
 
 static uv_loop_t* uv_loop;
 static uv_tcp_t server;
@@ -106,7 +106,7 @@ void after_write(uv_write_t* req, int status) {
 
 int on_headers_complete(http_parser* parser) {
   client_t* client = (client_t*) parser->data;
-  
+
   LOGF("[ %5d ] http message parsed", client->request_num);
 
   uv_write(
@@ -123,7 +123,7 @@ int main() {
   int r;
 
   parser_settings.on_headers_complete = on_headers_complete;
-  
+
   resbuf.base = RESPONSE;
   resbuf.len = sizeof(RESPONSE);
 

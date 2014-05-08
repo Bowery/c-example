@@ -1,5 +1,4 @@
-webserver
-.bowery
-http-parser/.git
-libuv/.git
 .git
+http-parser/.git
+
+libuv/.git

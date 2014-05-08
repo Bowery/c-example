@@ -1,0 +1,11 @@
+{
+  "web": {
+    "image": "clang",
+    "path": ".",
+    "ports": [
+      8000
+    ],
+    "start": "./application/webserver",
+    "build": "make -C /application"
+  }
+}
